@@ -6,7 +6,7 @@
   }
   
   .cityName {
-    font-size: 5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     text-align: center;
   }
@@ -26,8 +26,14 @@
   
   .weatherDetails {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
+    
+  }
+
+  .weatherIcon {
+    height: 70px;
+    width: 70px;
   }
   
   .detail {
@@ -36,11 +42,7 @@
     padding: 0.5rem;
     background-color: #f8f9fa;
     border-radius: 4px;
-  }
-  
-  .loading {
-    text-align: center;
-    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   
   .error {

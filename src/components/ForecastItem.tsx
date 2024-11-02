@@ -7,14 +7,14 @@ export const ForecastItem: React.FC<ForecastItemProps> = ({forecast}) => {
     <div className={styles.forecastItem}>
 
       <div className={styles.dateTime}>{forecast.date}</div>
-      <div className={styles.weather}>
+      <div >
         <img
           src={`http://openweathermap.org/img/w/${forecast.weather.icon}.png`}
           alt={forecast.weather.description}
           className={styles.weatherIcon}
         />
-        <div className={styles.weatherInfo}>
-          <div className={styles.temperature}>
+        <div>
+          <div>
             <span className={styles.temp}>
               {Math.round(forecast.temp)}°C
             </span>

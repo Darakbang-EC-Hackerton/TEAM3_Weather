@@ -17,13 +17,6 @@
   color: #666;
  }
  
- .tempContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
- }
- 
  .temp {
   font-size: 32px;
   font-weight: bold;
@@ -43,7 +36,13 @@
  }
  
  .weatherIcon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin-top: auto;
  }
+
+.description {
+  font-size: 16px;
+  margin-top: 3px;
+  color: rgb(53, 40, 40);
+}
