@@ -5,7 +5,6 @@ import { ForecastItemProps } from '../types/weather.types';
 export const ForecastItem: React.FC<ForecastItemProps> = ({forecast}) => {
   return (
     <div className={styles.forecastItem}>
-
       <div className={styles.dateTime}>{forecast.date}</div>
       <div >
         <img

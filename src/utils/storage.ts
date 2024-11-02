@@ -1,4 +1,3 @@
-// utils/storage.ts
 export const storage = {
     save: (key: string, data: any) => {
       try {

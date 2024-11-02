@@ -1,14 +1,9 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { FavoriteCity } from '../types/favorite.types';
-import { weatherApi } from '../services/weatherApi';
+import {  useDispatch } from 'react-redux';
+import { FavoriteCity, FavoriteListProps } from '../types/favorite.types';
 import styles from '../assets/styles/FavoriteList.module.css';
 import { removeFavorite } from '../store/favoriteSlice';
 import { useFavorites } from '../hooks/useFavorites';
-
-interface FavoriteListProps {
-    onCitySelect: (cityName: string) => void;  // App.tsx로부터 전달받는 prop
-  }
 
 export const FavoriteList: React.FC<FavoriteListProps> = ({onCitySelect}) => {
   const dispatch = useDispatch();
@@ -17,8 +12,6 @@ export const FavoriteList: React.FC<FavoriteListProps> = ({onCitySelect}) => {
     onCitySelect(city.name)
   };
   
-  
-
   return (
     <div className={styles.favoriteList}>
       <h2>즐겨찾기 목록</h2>
