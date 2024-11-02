@@ -1,0 +1,50 @@
+.weatherCard {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cityName {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .weatherMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .temperature {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .weatherDetails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .error {
+    color: #dc3545;
+    text-align: center;
+    padding: 1rem;
+  }

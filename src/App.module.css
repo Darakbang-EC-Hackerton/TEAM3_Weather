@@ -1,0 +1,26 @@
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f5f6fa;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 2rem 0;
+  width: 100%;
+}
