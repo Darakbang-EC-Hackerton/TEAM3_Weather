@@ -38,7 +38,6 @@ const App: React.FC = () => {
    }
  };
 
- // FavoriteList로 전달할 함수
  const handleCitySelect = (cityName: string) => {
    handleSearch(cityName);  // 선택된 도시의 날씨 정보 검색
  };
