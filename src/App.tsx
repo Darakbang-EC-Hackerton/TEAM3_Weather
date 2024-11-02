@@ -33,7 +33,7 @@ const App: React.FC = () => {
       setWeatherData(weather);
       setForecastData(forecast);
     } catch (err) {
-      setError('날씨 정보를 불러오는데 실패했습니다.');
+      setError(`(${city})의 날씨 정보를 불러오는데 실패했습니다.`);
     } finally {
       setLoading(false);
     }
