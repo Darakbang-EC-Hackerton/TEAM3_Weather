@@ -4,17 +4,19 @@ import { FavoriteCity } from '../types/favorite.types';
 import { weatherApi } from '../services/weatherApi';
 import styles from '../assets/styles/FavoriteList.module.css';
 import { removeFavorite } from '../store/favoriteSlice';
+import { useFavorites } from '../hooks/useFavorites';
 
 interface FavoriteListProps {
     onCitySelect: (cityName: string) => void;  // App.tsx로부터 전달받는 prop
   }
 
 export const FavoriteList: React.FC<FavoriteListProps> = ({onCitySelect}) => {
-  const favorites = useSelector((state: any) => state.favorites.cities);
   const dispatch = useDispatch();
+  const favorites = useFavorites();
   const handleCityClick = async (city: FavoriteCity) => {
     onCitySelect(city.name)
   };
+  
   
 
   return (

@@ -8,6 +8,7 @@ import { WeatherData, ForecastData } from './types/weather.types';
 import styles from './App.module.css';
 import { FavoriteList } from './components/FavoriteList';
 import { addFavorite } from './store/favoriteSlice';
+import { useFavorites } from './hooks/useFavorites';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,8 @@ const App: React.FC = () => {
   const [forecastData, setForecastData] = useState<ForecastData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const favorites = useFavorites();
+
 
   const handleSearch = async (city: string) => {
     try {
@@ -57,13 +60,17 @@ const App: React.FC = () => {
       <SearchBar onSearch={handleSearch} />
 
       {/* 즐겨찾기 목록 */}
-      <FavoriteList onCitySelect={handleCitySelect} />
-      
+      {favorites.length === 0
+      ? <div className={styles.emptyMessage}>
+      즐겨찾기한 도시가 없습니다.
+    </div>
+    : <FavoriteList onCitySelect={handleCitySelect} />}
+      <div className={styles.divider}></div>
       {loading && <div className={styles.loading}>로딩 중...</div>}
       {error && <div className={styles.error}>{error}</div>}
       
       {weatherData && <div className={styles.card}>
-          <button className={styles.favoriteButton}onClick={handleAddFavorite}>
+          <button className={styles.favoriteButton} onClick={handleAddFavorite}>
           ☆ 즐겨찾기
           </button>
           <WeatherInfo
