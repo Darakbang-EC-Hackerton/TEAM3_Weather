@@ -4,17 +4,8 @@ import { WeatherInfoProps } from '../types/weather.types';
 
 export const WeatherInfo: React.FC<WeatherInfoProps> = ({
   weatherData,
-  isLoading,
-  error,
+
 }) => {
-  if (isLoading) {
-    return <div className={styles.loading}>날씨 정보를 불러오는 중...</div>;
-  }
-
-  if (error) {
-    return <div className={styles.error}>{error}</div>;
-  }
-
   if (!weatherData) {
     return null;
   }

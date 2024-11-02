@@ -33,8 +33,6 @@ export interface WeatherData {
   
   export interface WeatherInfoProps {
     weatherData: WeatherData | null;
-    isLoading: boolean;
-    error: string | null;
   }
   
   export interface ForecastData {

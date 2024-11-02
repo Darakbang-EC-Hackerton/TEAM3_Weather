@@ -66,23 +66,26 @@ const App: React.FC = () => {
     </div>
     : <FavoriteList onCitySelect={handleCitySelect} />}
       <div className={styles.divider}></div>
-      {loading && <div className={styles.loading}>로딩 중...</div>}
-      {error && <div className={styles.error}>{error}</div>}
-      
+      {loading 
+      ? <div className={styles.loading}>날씨 정보를 불러오는 중...</div>
+    : <div>
       {weatherData && <div className={styles.card}>
           <button className={styles.favoriteButton} onClick={handleAddFavorite}>
           ☆ 즐겨찾기
           </button>
           <WeatherInfo
             weatherData={weatherData}
-            isLoading={loading}
-            error={error}
           />
           <div className={styles.divider}></div>
           {forecastData && (
             <ForecastList forecasts={forecastData.list} />
           )}
       </div>}
+    </div>
+    }
+      {error && <div className={styles.error}>{error}</div>}
+      
+      
       <div>
       </div>
     </div>
