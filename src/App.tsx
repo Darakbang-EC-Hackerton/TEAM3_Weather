@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { SearchBar } from './components/SearchBar';
 import { WeatherInfo } from './components/WeatherInfo';
 import { ForecastList } from './components/ForecastList';
@@ -6,8 +7,10 @@ import { weatherApi } from './services/weatherApi';
 import { WeatherData, ForecastData } from './types/weather.types';
 import styles from './App.module.css';
 import { FavoriteList } from './components/FavoriteList';
+import { addFavorite } from './store/favoriteSlice';
 
 const App: React.FC = () => {
+  const dispatch = useDispatch();
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [forecastData, setForecastData] = useState<ForecastData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -38,6 +41,16 @@ const App: React.FC = () => {
     handleSearch(cityName);  // 선택된 도시의 날씨 정보 검색
   };
 
+  // 즐겨찾기 추가 함수
+  const handleAddFavorite = () => {
+    if (weatherData) {
+      dispatch(addFavorite({
+        id: weatherData.id.toString(),
+        name: weatherData.name,
+      }));
+    }
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>날씨 검색</h1>
@@ -50,6 +63,9 @@ const App: React.FC = () => {
       {error && <div className={styles.error}>{error}</div>}
       
       {weatherData && <div className={styles.card}>
+          <button onClick={handleAddFavorite}>
+            ⭐ 즐겨찾기
+          </button>
           <WeatherInfo
             weatherData={weatherData}
             isLoading={loading}

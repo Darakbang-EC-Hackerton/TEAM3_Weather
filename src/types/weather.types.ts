@@ -1,7 +1,7 @@
-import { StringMappingType } from "typescript";
 
 // 날씨 정보 데이터
 export interface WeatherData {
+  id: number;
   dt: number;
     name: string;
     main: {

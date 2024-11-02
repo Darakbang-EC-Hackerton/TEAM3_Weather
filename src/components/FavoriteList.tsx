@@ -25,7 +25,6 @@ export const FavoriteList: React.FC<FavoriteListProps> = ({onCitySelect}) => {
           <div key={city.id} className={styles.cityCard}>
             <div className={styles.cityInfo} onClick={() => handleCityClick(city)}>
               <h3>{city.name}</h3>
-              <p>{city.country}</p>
             </div>
             <button
               onClick={() => dispatch(removeFavorite(city.id))}
