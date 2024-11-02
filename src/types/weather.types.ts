@@ -2,29 +2,29 @@
 export interface WeatherData {
   id: number;
   dt: number;
-    name: string;
-    main: {
-      temp: number;
-      temp_min: number;
-      temp_max: number;
-      humidity: number;
-    };
-    weather: [
-      {
-        id: number;
-        main: string;
-        description: string;
-        icon: string;
-      }
-    ];
-    clouds: {
-      all: number;
+  name: string;
+  main: {
+    temp: number;
+    temp_min: number;
+    temp_max: number;
+    humidity: number;
+  };
+  weather: [
+    {
+      id: number;
+      main: string;
+      description: string;
+      icon: string;
     }
-    wind: {
-      speed: number;
-    };
-    dt_txt: string;
+  ];
+  clouds: {
+    all: number;
   }
+  wind: {
+    speed: number;
+  };
+  dt_txt: string;
+}
   
   export interface SearchBarProps {
     onSearch: (city: string) => void;

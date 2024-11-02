@@ -2,10 +2,7 @@ import React from 'react';
 import styles from '../assets/styles/WeatherInfo.module.css';
 import { WeatherInfoProps } from '../types/weather.types';
 
-export const WeatherInfo: React.FC<WeatherInfoProps> = ({
-  weatherData,
-
-}) => {
+export const WeatherInfo: React.FC<WeatherInfoProps> = ({weatherData}) => {
   if (!weatherData) {
     return null;
   }
