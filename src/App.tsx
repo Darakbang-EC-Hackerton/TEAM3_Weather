@@ -63,8 +63,8 @@ const App: React.FC = () => {
       {error && <div className={styles.error}>{error}</div>}
       
       {weatherData && <div className={styles.card}>
-          <button onClick={handleAddFavorite}>
-            ⭐ 즐겨찾기
+          <button className={styles.favoriteButton}onClick={handleAddFavorite}>
+          ☆ 즐겨찾기
           </button>
           <WeatherInfo
             weatherData={weatherData}
