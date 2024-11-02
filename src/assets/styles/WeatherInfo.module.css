@@ -22,7 +22,14 @@
   .temperature {
     font-size: 2.5rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
   }
+
+  .minMax {
+    font-size: 16px;
+    color: #666;
+   }
   
   .weatherDetails {
     display: grid;

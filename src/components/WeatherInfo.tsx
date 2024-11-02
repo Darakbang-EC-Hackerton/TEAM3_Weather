@@ -22,6 +22,10 @@ export const WeatherInfo: React.FC<WeatherInfoProps> = ({
         <div className={styles.temperature}>
           {Math.round(weatherData.main.temp)}°C
         </div>
+        <div className={styles.minMax}>
+          {Math.round(weatherData.main.temp_max)}°C/
+          {Math.round(weatherData.main.temp_min)}°C
+          </div>
       </div>
       <div className={styles.weatherDetails}>
         <div className={styles.detail}>
