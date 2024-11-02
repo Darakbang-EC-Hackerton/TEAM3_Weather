@@ -1,19 +1,21 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FavoriteCity } from '../types/favorite.types';
+import { weatherApi } from '../services/weatherApi';
 import styles from '../assets/styles/FavoriteList.module.css';
+import { removeFavorite } from '../store/favoriteSlice';
 
-export const FavoriteList: React.FC = () => {
+interface FavoriteListProps {
+    onCitySelect: (cityName: string) => void;  // App.tsx로부터 전달받는 prop
+  }
+
+export const FavoriteList: React.FC<FavoriteListProps> = ({onCitySelect}) => {
   const favorites = useSelector((state: any) => state.favorites.cities);
   const dispatch = useDispatch();
-
-  const handleCityClick = (city: FavoriteCity) => {
-    // 날씨 정보 조회 로직
+  const handleCityClick = async (city: FavoriteCity) => {
+    onCitySelect(city.name)
   };
-
-    function removeFavorite(id: string): any {
-        throw new Error('Function not implemented.');
-    }
+  
 
   return (
     <div className={styles.favoriteList}>

@@ -33,10 +33,19 @@ const App: React.FC = () => {
     }
   };
 
+  // FavoriteList로 전달할 함수
+  const handleCitySelect = (cityName: string) => {
+    handleSearch(cityName);  // 선택된 도시의 날씨 정보 검색
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>날씨 검색</h1>
       <SearchBar onSearch={handleSearch} />
+
+      {/* 즐겨찾기 목록 */}
+      <FavoriteList onCitySelect={handleCitySelect} />
+      
       {loading && <div className={styles.loading}>로딩 중...</div>}
       {error && <div className={styles.error}>{error}</div>}
       
@@ -52,7 +61,6 @@ const App: React.FC = () => {
           )}
       </div>}
       <div>
-        <FavoriteList />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+// src/store/favoriteSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { FavoriteCity } from '../types/favorite.types';
 
@@ -23,3 +24,6 @@ export const favoriteSlice = createSlice({
     },
   },
 });
+
+export const { addFavorite, removeFavorite } = favoriteSlice.actions;
+export default favoriteSlice.reducer;
